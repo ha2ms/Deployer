@@ -1,0 +1,4 @@
+# Kill all SSh process
+ps aux | grep sshd | grep -v grep | awk '{print $2}' | xargs kill
+
+
