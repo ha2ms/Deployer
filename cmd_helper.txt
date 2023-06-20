@@ -1,4 +1,9 @@
 # Kill all SSh process
 ps aux | grep sshd | grep -v grep | awk '{print $2}' | xargs kill
 
-
+# Reboot A paufnier sur terraform
+    provisioner "local-exec" {
+      #interpreter = [ "/bin/bash" ]
+      #command = "ssh ${var.new_user}@${var.ssh_host} \"sudo reboot\"; ts=`date +%s`;let \"ts += ${var.time_to_wait} * 60\" && connect=1; while [[ $connect -gt 0 ]] && [[ `date +%s` -lt $ts ]];do ssh -o \"StrictHostKeyChecking=no\" ${var.new_user}@${var.ssh_host} \"echo 1\";connect=$?;if [[ $connect -gt 0 ]];then sleep 30;fi;done;"
+      command = "ssh ${var.new_user}@${var.ssh_host} \"sudo reboot\""
+    }
