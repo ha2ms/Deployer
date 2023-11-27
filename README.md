@@ -1,3 +1,3 @@
 # Deployer
 
-Modifier l;emplacement du l'organisation du repos, ajout du MVP
+Refonte d'une partie du menu déployer
